@@ -26,6 +26,7 @@ pipeline {
 			}
 			echo "deployment has been done!"
 			fi
-			
-			}}}	
-}}
+			}}}
+		stage('Slack') {
+			steps {
+				sh slackSend baseUrl: 'https://hooks.slack.com/services/', botUser: true, channel: 'pink1', color: 'good', message: 'pinkieee', teamDomain: 'devops', tokenCredentialId: 'pink1', username: 'pink1'
